@@ -1,0 +1,20 @@
+.general_content{
+  margin: 50px 0px 30px 0px;
+}
+body{
+  background: #F0803C;
+}
+.jumbotron{
+  background: #310D20;
+  color: white;
+}
+.align_center{
+  text-align: center;
+  margin: 0px 0px 25px 0px;
+}
+.giveMarginBottom{
+  margin: 0px 0px 30px 0px;
+}
+.giveMarginTop{
+  margin:30px 0px 0px 0px;
+}

@@ -1,0 +1,20 @@
+{% extends 'oneApp/base.html' %}
+{% load static %}
+{% block title %}
+  <title>HOME</title>
+{% endblock title %}
+
+{% block body_block %}
+  {% if user.is_authenticated %}
+    <div class="general_content jumbotron">
+      <h1 class="align_center">WELCOME! {{ username }}</h1>
+      <h3 class="align_center">Want to publish a post?</h3>
+      <button class="btn btn-outline-warning giveMarginTop" type="button" name="button">Publish Now!</button>
+    </div>
+  {% else %}
+    <div class="general_content jumbotron">
+      <h1 class="align_center">WELCOME!</h1>
+      <h3 class="align_center">To publish a post you must be loged in!</h3>
+    </div>
+  {% endif %}
+{% endblock %}

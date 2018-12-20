@@ -1,0 +1,30 @@
+{% extends 'oneApp/base.html' %}
+
+{% block title %}
+  <title>LOGIN</title>
+{% endblock title %}
+
+{% block body_block %}
+  <div class="jumbotron general_content">
+    <div class="giveMarginBottom">
+      <h3>Log In</h3>
+    </div>
+    <form class="" action="{% url 'oneApp:user_login' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Username" name='username' required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" name='password' required>
+      </div>
+      <button type="submit" class="btn btn-primary giveMarginTop">Log In</button>
+      {% if values %}
+        <p class="giveMarginTop">Incorrect Values! Try Again!</p>
+      {% else %}
+        <p class="giveMarginTop">Do not have an account? <a href="{% url 'oneApp:user_register' %}">Sign Up</a></p>
+      {% endif %}
+    </form>
+  </div>
+{% endblock %}

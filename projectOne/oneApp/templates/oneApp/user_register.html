@@ -1,0 +1,24 @@
+{% extends 'oneApp/base.html' %}
+
+{% block title %}
+  <title>LOGIN</title>
+{% endblock title %}
+
+{% block body_block %}
+  <div class="jumbotron general_content">
+    <div class="giveMarginBottom">
+      <h3>Register</h3>
+    </div>
+    <form class="" action="{% url 'oneApp:user_register' %}" method="POST">
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      <button type="submit" class="btn btn-outline-warning giveMarginTop">Sign Up</button>
+    </form>
+    {% if register %}
+      <p class="giveMarginTop">Registration Successfull! Now Try to Login.</p>
+    {% endif %}
+    {% if errorit %}
+      <p class="giveMarginTop">Invalid Data! Try Again</p>
+    {% endif %}
+  </div>
+{% endblock %}
